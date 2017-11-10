@@ -5,7 +5,7 @@ int frame = 0;
 
 void setup() {
   size = 4;
-  heap = new int[(int)pow(2, size) - 1];
+  heap = new int[(int)pow(2, size) - 1]; //COMMENT: probably more efficient to use size*size
   //ideal = new int[(int)pow(2, size) - 1];
   //int p = 0;
   for(int i = 0; i < heap.length; i++) {
@@ -33,7 +33,7 @@ void draw() {
 
 void insert(int n) {
   int a = 0;
-  while(heap[a] != -1) {
+  while(heap[a] != -1) { //BUG: This ends with an indexOutOfBounds exception
     a++;
   }
   heap[a] = n;
@@ -48,7 +48,7 @@ void insert(int n) {
 }
 
 void swap(int a, int b) {
-  int temp = a;
+  int temp = a;      //BUG?: shouldn't this be temp = heap[a]?
   heap[a] = heap[b];
   heap[b] = temp;
 }
