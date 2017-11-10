@@ -80,7 +80,7 @@ void swap(int a, int b) {
   heap[b] = temp;
 }
 int[] swap(int[] array, int a, int b) {
-  int out = array;
+  int[] out = array;
   int temp = out[a];
   out[a] = out[b];
   out[b] = temp;
