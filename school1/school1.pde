@@ -2,7 +2,7 @@ int size;
 int[] heap;
 //int[] ideal;
 int frame = 0;
-
+String input = "";
 void setup() {
   size = 4;
   heap = new int[(int)pow(2, size) - 1]; //COMMENT: probably more efficient to use size*size
@@ -21,12 +21,15 @@ void setup() {
 void draw() {
   if(frame % 20 == 0) {
     background(#c0c0c0);
-    insert((int)random(256));
+    int dataPoint = (int)random(256);
+    insert(dataPoint);
+    input = input + dataPoint + " ";
     for(int i = 0; i < heap.length; i++) {
       int d = getDepth(i);
       int s = 16;
       text(heap[i], (width/(pow(2,d)+1)) * (i-(pow(2,d)-2)), (d+1)*s);//(i-(pow(2,d)-1))
     }
+    text(input, 20,100,245,512);
   }
   frame++;
 }
