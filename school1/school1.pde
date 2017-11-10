@@ -66,13 +66,13 @@ int[] insert(int[] array, int n) {
   }
   return out;
 }
-
+/*
 int[] buildHeap(int[] in) {
   int[] out = new int[in.length];
   for() {
     insert((int)random(256));
   }
-}
+}*/
 
 void swap(int a, int b) {
   int temp = heap[a];
