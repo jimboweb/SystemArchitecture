@@ -50,7 +50,7 @@ boolean insert(int n) {
 }
 int[] insert(int[] array, int n) {
   int a = 0;
-  int out = array;
+  int[] out = array;
   while(out[a] != -1) {
     a++;
     if(a >= out.length) return array;
