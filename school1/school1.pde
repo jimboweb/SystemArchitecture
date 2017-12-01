@@ -50,7 +50,7 @@ boolean insert(int n) {
 }
 int[] insert(int[] array, int n) {
   int a = 0;
-  int out = array;
+  int[] out = array;
   while(out[a] != -1) {
     a++;
     if(a >= out.length) return array;
@@ -60,7 +60,7 @@ int[] insert(int[] array, int n) {
   while(b >= 0) {
     b = indexParent(a);
     if(b >= 0) if(out[a] < out[b]) {
-      swap(out,a,b);
+      out = swap(out,a,b);
     };
     a = b;
   }
@@ -69,9 +69,10 @@ int[] insert(int[] array, int n) {
 
 int[] buildHeap(int[] in) {
   int[] out = new int[in.length];
-  for() {
-    insert((int)random(256));
+  for(int i = 0; i < in.length; i++) {
+    out = insert(out, in[i]);
   }
+  return out;
 }
 
 void swap(int a, int b) {
@@ -80,7 +81,7 @@ void swap(int a, int b) {
   heap[b] = temp;
 }
 int[] swap(int[] array, int a, int b) {
-  int out = array;
+  int[] out = array;
   int temp = out[a];
   out[a] = out[b];
   out[b] = temp;
