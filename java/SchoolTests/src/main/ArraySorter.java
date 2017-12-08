@@ -29,7 +29,7 @@ public class ArraySorter {
 		
 	}
 	
-	public boolean insert() {
+	public boolean insert(int value) {
 		//insert new value
 		//return true if insert succeeded
 		return false;
