@@ -1,6 +1,40 @@
 package main;
 
 public class ArraySorter {
+	private int[] heap; //have heap array as a property
+	private int size; //size will be returned with a method
+	
+	public ArraySorter(int[] input) {
+		// heap = build heap
+		// size = size of heap
+	}
+	
+	public int size() {
+		//return size
+		return 0;
+	}
+	
+	public int extractMax() {
+		//return max value and delete it
+		return 0;
+	}
+	
+	public int showMax() {
+		//return max value but don't delete it
+		return 0;
+	}
+	
+	public void deleteMax() {
+		//delete max value
+		
+	}
+	
+	public boolean insert() {
+		//insert new value
+		//return true if insert succeeded
+		return false;
+	}
+	
 	public int[] heapSort(int[] heap, boolean isMin) {
 		int[] out = new int[heap.length];
 		for(int i = 0; i < out.length; i++) {

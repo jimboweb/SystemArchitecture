@@ -6,6 +6,6 @@ public class Main {
 		int[] heap = {9, 22, 5, 6, 32, 10, 30};
 		sort.printHeap(heap);
 		heap = sort.heapSort(heap, false);
-		//sort.printHeap(heap);
+		sort.printHeap(heap);
 	}
 }
