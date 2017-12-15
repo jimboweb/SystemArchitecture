@@ -1,0 +1,39 @@
+package main;
+
+public class ArraySorter {
+	
+	public int[] heapSort() {
+		
+	}
+	
+	int[] swap(int[] array, int a, int b) {
+	  int[] out = array;
+	  int temp = out[a];
+	  out[a] = out[b];
+	  out[b] = temp;
+	  return out;
+	}
+	int findChild1(int[] heap, int n) {
+	  return heap[(n << 1) + 1];
+	}
+	int findChild2(int[] heap, int n) {
+	  return heap[(n << 1) + 2];
+	}
+	int findParent(int[] heap, int n) {
+	  return heap[(n - 1) >> 1];
+	}
+	int indexParent(int[] heap, int n) {
+	  return (n - 1) >> 1;
+	}
+	int getDepth(int n) {
+	  return (int)(Math.log(n+1)/Math.log(2));
+	}
+
+	int powInt(int pow, int n) {
+	  int out = 1;
+	  for(int i = 0; i < pow; i++) {
+	    out *= n;
+	  }
+	  return out;
+	}
+}
