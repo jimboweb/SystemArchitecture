@@ -2,7 +2,7 @@ package main;
 
 public class ArrayHeap {
 	int[] heap;
-	//boolean isMin;
+	boolean isMin;
 	
 	public ArrayHeap(int[] heap_) {
 		heap = heap_;

@@ -1,18 +1,13 @@
 package main;
 
-public class ArrayHeap {
-	int[] heap;
-	//boolean isMin;
+abstract public class ArrayHeap {
+	//int[] heap;
 	
-	public ArrayHeap(int[] heap_) {
-		heap = heap_;
-	}
+	//public ArrayHeap(int[] heap_) {
+	//	heap = heap_;
+	//}
 	
-	public int getTop() {
-		return heap[0];
-	}
-	
-	public int[] heapSort(boolean isMin) {
+	static public int[] heapSort(int[] heap, boolean isMin) {
 		int[] out = new int[heap.length];
 		for(int i = 0; i < out.length; i++) {
 			out[i] = -1;
@@ -21,11 +16,11 @@ public class ArrayHeap {
 			out = insert(out, heap[i], isMin);
 			//printHeapFlat(out);
 		}
-		heap = out;
-		return heap;
+		//heap = out;
+		return out;
 	}
 	
-	int[] insert(int[] array, int n, boolean isMin) {
+	static int[] insert(int[] array, int n, boolean isMin) {
 	  int a = 0;
 	  int[] out = array;
 	  
@@ -42,39 +37,39 @@ public class ArrayHeap {
 	      out = swap(out,a,parent);
 	    }
 	    a = parent;
-	    //printHeapFlat(out);
+	    printHeapFlat(out);
 	  }
-	  //System.out.print("\n");
+	  System.out.print("\n");
 	  return out;
 	}
 	
-	int[] swap(int[] array, int a, int b) {
+	static int[] swap(int[] array, int a, int b) {
 	  int[] out = array;
 	  int temp = out[a];
 	  out[a] = out[b];
 	  out[b] = temp;
 	  return out;
 	}
-	int findChild1(int[] heap, int n) {
+	static int findChild1(int[] heap, int n) {
 	  return heap[(n << 1) + 1];
 	}
-	int findChild2(int[] heap, int n) {
+	static int findChild2(int[] heap, int n) {
 	  return heap[(n << 1) + 2];
 	}
-	int findParent(int[] heap, int n) {
+	static int findParent(int[] heap, int n) {
 	  return heap[indexParent(n)];
 	}
-	int indexParent(int n) {
+	static int indexParent(int n) {
 	  return (n - 1) >> 1;
 	  /* 0123456789ABCDE
 	   * x00112233445566
 	   */
 	}
-	int getDepth(int n) {
+	static int getDepth(int n) {
 	  return (int)(Math.log(n+1)/Math.log(2));
 	}
 
-	int powInt(int pow, int n) {
+	static int powInt(int pow, int n) {
 	  int out = 1;
 	  for(int i = 0; i < pow; i++) {
 	    out *= n;
@@ -82,7 +77,7 @@ public class ArrayHeap {
 	  return out;
 	}
 	
-	void printHeap(int[] heap) {
+	static void printHeap(int[] heap) {
 		for(int i = 0; i < heap.length; i++) {
 			System.out.print(heap[i]);
 			if(i+1 < heap.length) System.out.print(", ");
@@ -90,7 +85,7 @@ public class ArrayHeap {
 			if(i == 0 || i == 2 || i == 6 || i == 14 || i == 30) System.out.print("\n");
 		}
 	}
-	void printHeapFlat(int[] heap) {
+	static void printHeapFlat(int[] heap) {
 		for(int i = 0; i < heap.length; i++) {
 			System.out.print(heap[i]);
 			if((i == 0 || i == 2 || i == 6 || i == 14 || i == 30) && (i+1 < heap.length)) System.out.print(".  ");

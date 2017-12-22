@@ -7,6 +7,5 @@ public class Main {
 		sort.printHeapFlat(sort.heap);
 		sort.heapSort(false);
 		//sort.printHeap(heap);
-		System.out.println(sort.getTop());
 	}
 }

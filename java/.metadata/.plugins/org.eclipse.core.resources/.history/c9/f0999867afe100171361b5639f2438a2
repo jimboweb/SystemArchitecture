@@ -2,7 +2,6 @@ package main;
 
 public class ArrayHeap {
 	int[] heap;
-	//boolean isMin;
 	
 	public ArrayHeap(int[] heap_) {
 		heap = heap_;
@@ -42,9 +41,9 @@ public class ArrayHeap {
 	      out = swap(out,a,parent);
 	    }
 	    a = parent;
-	    //printHeapFlat(out);
+	    printHeapFlat(out);
 	  }
-	  //System.out.print("\n");
+	  System.out.print("\n");
 	  return out;
 	}
 	
