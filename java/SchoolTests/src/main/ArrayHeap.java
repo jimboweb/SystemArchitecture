@@ -9,7 +9,8 @@ public class ArrayHeap {
 	}
 	
 	public int getTop() {
-		return heap[0];
+		int out = heap[0];
+		return out;
 	}
 	
 	public int[] heapSort(boolean isMin) {
@@ -18,14 +19,14 @@ public class ArrayHeap {
 			out[i] = -1;
 		}
 		for(int i = 0; i < heap.length; i++) {
-			out = insert(out, heap[i], isMin);
+			out = push(out, heap[i], isMin);
 			//printHeapFlat(out);
 		}
 		heap = out;
 		return heap;
 	}
 	
-	int[] insert(int[] array, int n, boolean isMin) {
+	int[] push(int[] array, int n, boolean isMin) {
 	  int a = 0;
 	  int[] out = array;
 	  
@@ -42,10 +43,34 @@ public class ArrayHeap {
 	      out = swap(out,a,parent);
 	    }
 	    a = parent;
+	    //System.out.print(" ");
 	    //printHeapFlat(out);
 	  }
 	  //System.out.print("\n");
 	  return out;
+	}
+	
+	int pop(boolean isMin) {
+		int output = getTop();
+		//int[] out = array;
+		heap[0] = -1;
+		if(isBlank()) return -1;
+		//heap = heapSort(isMin);
+		for(int i = heap.length - 1; heap[0] == -1; i--) {
+			heap[0] = heap[i];
+			heap[i] = -1;
+			//System.out.print("e");
+			//printHeapFlat(heap);
+		}
+		heapSort(isMin);
+		return output;
+	}
+	
+	boolean isBlank() {
+		for(int i = 0; i < heap.length; i++) {
+			if(heap[i] >= 0) return false;
+		}
+		return true;
 	}
 	
 	int[] swap(int[] array, int a, int b) {
