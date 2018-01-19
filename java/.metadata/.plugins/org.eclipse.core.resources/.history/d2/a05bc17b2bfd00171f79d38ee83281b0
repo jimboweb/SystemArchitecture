@@ -1,0 +1,9 @@
+package main;
+
+public class Hash {
+	int s0;
+	
+	public int rand(int in) {
+		s0 = (in << 8)
+	}
+}

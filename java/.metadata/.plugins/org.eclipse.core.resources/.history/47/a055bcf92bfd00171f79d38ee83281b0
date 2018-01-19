@@ -1,0 +1,14 @@
+package main;
+
+public class Hash {
+	//int s0;
+	
+	public int rand(int n_) {
+		int in = n_;
+		int s0 = in ^ (in << 8);
+		in = (s0 >> 8) | (s0 << 8);
+		s0 = in ^ ((s0 >> 8) << 1);
+		int s1 = 0xFF80 ^ (s0 >> 1);
+		if(s0 & 0x0001 == 0x0001)
+	}
+}

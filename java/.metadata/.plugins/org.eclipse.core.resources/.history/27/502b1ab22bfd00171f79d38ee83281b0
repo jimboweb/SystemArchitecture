@@ -1,0 +1,11 @@
+package main;
+
+public class Hash {
+	//int s0;
+	
+	public int rand(int n_) {
+		int in = n_;
+		int s0 = (in << 8) ^ in;
+		in = ((s0 >> 8) & 0x00FF)
+	}
+}
